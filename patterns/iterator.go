@@ -27,7 +27,7 @@ func (n Numbers) GetIterator() IIntIterator {
 	return &Iterator{n, 0}
 }
 
-// Interator for Numbers type
+// Iterator for Numbers type
 type Iterator struct {
 	_numbers Numbers
 	_index   int
