@@ -9,7 +9,7 @@ type IExpression interface {
 	Interpret(i int) bool
 }
 
-// DevExpression is TerminalExpression
+// DivExpression is TerminalExpression
 type DivExpression struct {
 	divider int
 }

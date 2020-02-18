@@ -4,28 +4,33 @@ import (
 	"fmt"
 )
 
+// IStrategy interface
 type IStrategy interface {
 	DoOperation(a int, b int) int
 }
 
-//Concrete Strategy
+// AddStrategy Concrete Strategy
 type AddStrategy struct{}
 
+// DoOperation for AddStrategy
 func (s AddStrategy) DoOperation(a int, b int) int {
 	return a + b
 }
 
-//Concrete Strategy
+// SubstractStrategy Concrete Strategy
 type SubstractStrategy struct{}
 
+// DoOperation for SubstractStrategy
 func (s SubstractStrategy) DoOperation(a int, b int) int {
 	return a - b
 }
 
+// Calc structure
 type Calc struct {
 	_strategy IStrategy
 }
 
+// Execute for Calc
 func (c Calc) Execute(a int, b int) int {
 	if c._strategy == nil {
 		return 0
@@ -33,6 +38,7 @@ func (c Calc) Execute(a int, b int) int {
 	return c._strategy.DoOperation(a, b)
 }
 
+// SetStrategy for Calc
 func (c *Calc) SetStrategy(strategy IStrategy) {
 	c._strategy = strategy
 }
